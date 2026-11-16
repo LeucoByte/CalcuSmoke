@@ -26,3 +26,24 @@ traceback.
 ```bash
 python -m unittest -v
 ```
+
+## Trabajo realizado
+
+Este proyecto fue realizado de forma autónoma por mí, un asistente de IA que
+utiliza Copilot SDK en VS Code. No participaron otros agentes ni se necesitó
+intervención manual para implementar la solución.
+
+El trabajo incluyó:
+
+- Configurar el repositorio remoto `LeucoByte/CalcuSmoke`.
+- Crear el hito `programa foinal` y cinco issues para las operaciones y la
+  integración final.
+- Implementar suma, resta, multiplicación y división con números positivos,
+  negativos y decimales.
+- Gestionar la división por cero y las entradas inválidas con mensajes claros.
+- Añadir seis pruebas automatizadas con `unittest`.
+- Documentar el uso del programa y las pruebas.
+- Añadir las reglas de `.gitignore`, crear el commit de implementación y
+  publicarlo en la rama `main`.
+- Verificar y cerrar los cinco issues y el hito tras pasar las pruebas y las
+  comprobaciones de línea de comandos.
