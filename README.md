@@ -1,80 +1,73 @@
 # CalcuSmoke
 
-CalcuSmoke is a minimal Python command-line calculator supporting addition,
-subtraction, multiplication, and division for positive, negative, and decimal
-numbers.
+## Mi trabajo
 
-## Run the calculator
+Soy un asistente de IA que utiliza Copilot SDK en VS Code. Marco Calvo, mi
+creador, me proporcionó este workspace, las herramientas documentadas en
+`tools/TOOLS.md` y la autorización necesaria para trabajar con GitHub.
 
-```bash
-python calculator.py add 2 3
-```
+Marco me pidió crear desde cero el repositorio `LeucoByte/CalcuSmoke`, llevar
+un flujo de desarrollo completo y dejar constancia verificable de cada paso.
+Eso es exactamente lo que hice, de forma autónoma y sin utilizar otros
+agentes.
 
-The command prints `5.0`. Use `subtract`, `multiply`, or `divide` for the
-other operations:
+## Herramientas que Marco me proporcionó
 
-```text
-$ python calculator.py divide 7 2
-3.5
-```
+Marco me proporcionó scripts Bash especializados. Yo no inspeccioné ni
+modifiqué sus implementaciones: primero leí `tools/TOOLS.md` y después utilicé
+cada script según su documentación.
 
-Invalid input and division by zero produce a clear error message without a
-traceback.
+- `configuration/set-project.sh`: configuré el usuario y el nombre del
+  repositorio.
+- `connection/check-github-ssh.sh`: comprobé que la autenticación correspondía
+  a `LeucoByte` antes de crear recursos remotos.
+- `repositories/create-remote-repository.sh`: creé el repositorio, inicialicé
+  Git, generé el commit inicial y publiqué `main`.
+- `milestones/create-milestone.sh`: creé el milestone `programa foinal`.
+- `issues/create-issue.sh`: creé cinco issues con descripciones y criterios de
+  aceptación.
+- `milestones/get-milestone.sh` e `issues/get-issue.sh`: verifiqué títulos,
+  descripciones, asociaciones y estados remotos.
+- `issues/comments/create-comment.sh`: publiqué el resultado de cada trabajo
+  y sus comprobaciones en los issues.
+- `issues/close-issue.sh`: cerré cada issue únicamente después de verificarlo.
+- `milestones/close-milestone.sh`: cerré el milestone cuando los cinco issues
+  estaban completados.
 
-## Run the tests
+Las herramientas me obligaban a trabajar con rutas explícitas, a ejecutar los
+scripts desde la raíz y a no revelar credenciales. Respeté esas condiciones:
+no leí `.env`, no añadí credenciales a Git y no modifiqué nada dentro de
+`tools/`.
 
-```bash
-python -m unittest -v
-```
+## Flujo que ejecuté, en orden
 
-## Cómo se construyó el proyecto
+1. Comprobé la ubicación real del workspace con `pwd`.
+2. Leí completamente `tools/TOOLS.md` con la ruta absoluta obtenida.
+3. Configuré el proyecto para `LeucoByte/CalcuSmoke`.
+4. Verifiqué la conexión SSH con GitHub.
+5. Creé el repositorio remoto mediante el script proporcionado.
+6. Creé el milestone `programa foinal` con su descripción exacta.
+7. Creé los cinco issues y los asocié al milestone:
+   - Implement addition.
+   - Implement subtraction.
+   - Implement multiplication.
+   - Implement division.
+   - Implement the final calculator program integrating all four operations.
+8. Volví a leer el milestone y cada issue para comprobar sus datos reales,
+   sin adivinar números, IDs ni asociaciones.
+9. Añadí los archivos del proyecto, las pruebas, las reglas de exclusión y
+   esta documentación.
+10. Ejecuté las pruebas y las comprobaciones de línea de comandos. El alias
+    `python` no estaba disponible en el entorno, así que ejecuté correctamente
+    la misma suite con `python3`.
+11. Publiqué comentarios con resultados verificables y cerré los issues uno a
+    uno.
+12. Verifiqué que los cinco issues estaban cerrados, cerré el milestone y
+    confirmé su estado final remoto.
+13. Revisé los archivos versionados para no incluir `tools/`, `.env` ni
+    credenciales, creé el commit `cb3cfdc` y lo publiqué en `main`.
 
-Este proyecto fue realizado de forma autónoma por un asistente de IA usando
-Copilot SDK en VS Code. El objetivo no era solo escribir una calculadora, sino
-seguir un flujo de desarrollo completo usando las herramientas proporcionadas
-en `tools/TOOLS.md`.
-
-### Herramientas utilizadas
-
-Las herramientas eran scripts Bash documentados dentro de `tools/`. Se usaron
-únicamente mediante `bash` y desde la raíz del proyecto:
-
-- `configuration/set-project.sh`: configuró la cuenta `LeucoByte` y el
-  repositorio `CalcuSmoke` en `.env`.
-- `connection/check-github-ssh.sh`: comprobó la autenticación SSH antes de
-  operar con GitHub.
-- `repositories/create-remote-repository.sh`: creó el repositorio remoto,
-  inicializó Git, creó el primer README, hizo el primer commit y publicó la
-  rama `main`.
-- `milestones/create-milestone.sh`, `get-milestone.sh` y
-  `close-milestone.sh`: crearon, verificaron y cerraron el milestone
-  `programa foinal`.
-- `issues/create-issue.sh`, `get-issue.sh` y `close-issue.sh`: crearon,
-  comprobaron y cerraron los cinco issues de trabajo.
-- `issues/comments/create-comment.sh`: publicó en cada issue el resultado de
-  la implementación y sus verificaciones.
-
-No se inspeccionó ni se modificó el contenido de `tools/`; se siguió su
-documentación como contrato. Las credenciales y la configuración local de
-`.env` tampoco se incluyeron en Git.
-
-### Construcción desde cero
-
-1. Se estableció la raíz real del workspace y se leyó la documentación de
-   herramientas.
-2. Se configuró el repositorio y se verificó la conexión con GitHub.
-3. Se creó `LeucoByte/CalcuSmoke` con su commit inicial.
-4. Se creó el milestone y cinco issues con criterios de aceptación para suma,
-   resta, multiplicación, división e integración final.
-5. Se implementó `calculator.py` usando únicamente la biblioteca estándar de
-   Python, con funciones para las cuatro operaciones y una interfaz CLI.
-6. Se añadió `test_calculator.py` con seis pruebas `unittest`, incluyendo
-   números negativos, decimales y división por cero.
-7. Se añadió `.gitignore` para excluir `tools/`, `.env`, cachés y bytecode, y
-   se amplió este README con instrucciones y ejemplos.
-8. Se ejecutaron las pruebas y comprobaciones CLI, se documentaron los
-   resultados en los issues, y se cerraron los cinco issues y el milestone.
-9. Se creó el commit de implementación `cb3cfdc` y se publicó en `main`.
-
-No participaron otros agentes y no fue necesaria intervención manual para
-implementar o verificar la solución.
+Después actualicé este README directamente sobre `main` con el commit
+`8ef1fef`, incluyendo coautoría de Copilot. Todo el trabajo quedó respaldado
+por comandos ejecutados, resultados observables, commits y estados remotos
+verificados.
